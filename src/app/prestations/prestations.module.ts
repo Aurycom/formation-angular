@@ -4,13 +4,14 @@ import { PrestationsComponent } from './containers/prestations/prestations.compo
 import { ListPrestationsComponent } from './containers/list-prestations/list-prestations.component';
 import { TotalPipe } from '../shared/pipes/total.pipe';
 import { SharedModule } from '../shared/shared.module';
+import { PrestationComponent } from './components/prestation/prestation.component';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule
   ],
-  declarations: [PrestationsComponent, ListPrestationsComponent],
+  declarations: [PrestationsComponent, ListPrestationsComponent, PrestationComponent],
   exports: [PrestationsComponent]
 })
 export class PrestationsModule { }
