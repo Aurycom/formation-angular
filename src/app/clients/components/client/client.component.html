@@ -1,0 +1,18 @@
+<tr>
+  <td>{{item.id}}</td>
+  <td>{{item.nom}}</td>
+  <td>{{item.adresse}}</td>
+  <td>{{item.codePostal}}</td>
+  <td>{{item.ville}}</td>
+  <td>{{item.tjm_ht | currency:'EUR'}}</td>
+  <td [appState]="item.state">
+    <select (change)="changeState($event)">
+      <!-- [] pour binder attribut/value -->
+      <option [value]="item.state">{{item.state}}</option>
+      <!-- ng-container n'est pas généré dans le DOM -->
+      <ng-container *ngFor="let state of states">
+        <option [value]="state" *ngIf="state !== item.state">{{state}}</option>
+      </ng-container>
+    </select>
+  </td>
+</tr>

@@ -1,0 +1,5 @@
+<app-tableau [headers]="headers">
+  <!-- passage de la variable presta à la propriete fille item -->
+  <app-client *ngFor="let client of collection" [item]="client"></app-client>
+  <app-add-row title="client"></app-add-row>
+</app-tableau>

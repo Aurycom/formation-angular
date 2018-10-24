@@ -13,7 +13,7 @@ export class StateDirective implements OnChanges {
 
   // Mettre un type primitif dans le input car objet par reference
   ngOnChanges() {
-    console.log(this.appState);
+    // console.log(this.appState);
     this.nomClass = this.formatClass(this.appState);
   }
 

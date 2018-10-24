@@ -4,14 +4,20 @@
   background: $palette-color-three;
 }
 
-.state-annule {
+.state-annule,
+.state-inactif{
   background: $palette-color-two;
 }
 
-.state-confirme {
+.state-confirme,
+.state-actif{
   background: $palette-color-four;
 }
 
 tbody>*:nth-child(odd)>tr{
   background: darken($light-color, 8);
+}
+
+.add a.btn{
+  color:$light-color;
 }

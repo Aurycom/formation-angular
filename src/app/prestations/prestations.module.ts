@@ -5,13 +5,18 @@ import { ListPrestationsComponent } from './containers/list-prestations/list-pre
 import { TotalPipe } from '../shared/pipes/total.pipe';
 import { SharedModule } from '../shared/shared.module';
 import { PrestationComponent } from './components/prestation/prestation.component';
+import { PrestationsRoutingModule } from './routing/prestations-routing/prestations-routing.module';
+
+import { RouterModule } from '@angular/router';
+import { AddPrestationComponent } from './containers/add-prestation/add-prestation.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    PrestationsRoutingModule
   ],
-  declarations: [PrestationsComponent, ListPrestationsComponent, PrestationComponent],
+  declarations: [PrestationsComponent, ListPrestationsComponent, PrestationComponent, AddPrestationComponent],
   exports: [PrestationsComponent]
 })
 export class PrestationsModule { }

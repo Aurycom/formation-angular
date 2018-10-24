@@ -1,7 +1,7 @@
 import { Prestation } from 'src/app/shared/models/prestation.model';
 import { State } from 'src/app/shared/enums/state.enum';
 
-export const fakeCollection: Prestation[] = [
+export const fakeCollectionPrestations: Prestation[] = [
   new Prestation({
     id: 'lorem',
     typePresta: 'formation',
