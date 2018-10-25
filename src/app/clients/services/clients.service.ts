@@ -30,4 +30,9 @@ export class ClientsService {
     item.state = state;
     // console.log(item.state);
   }
+
+   // add item collection
+   public add(item: Client) {
+    this.collection.push(new Client(item));
+  }
 }

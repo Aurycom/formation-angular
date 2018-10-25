@@ -23,6 +23,7 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
     FormsModule,
     ReactiveFormsModule
   ],
+  // tslint:disable-next-line:max-line-length
   declarations: [PrestationsComponent, ListPrestationsComponent, PrestationComponent, AddPrestationComponent, FormPrestationComponent, ReactiveFormComponent],
   exports: [PrestationsComponent]
 })
