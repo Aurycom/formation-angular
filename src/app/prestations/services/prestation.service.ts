@@ -12,14 +12,14 @@ import { map } from 'rxjs/operators';
 export class PrestationService {
 
   private itemsCollection: AngularFirestoreCollection<Prestation>;
-  private _collection: Observable<Prestation[]>;
+  private _collection$: Observable<Prestation[]>;
 
   constructor(
     private afs: AngularFirestore
   ) {
     // this._collection = fakeCollectionPrestations;
     this.itemsCollection = afs.collection<Prestation>('prestations');
-    this.collection = this.itemsCollection.valueChanges().pipe(
+    this.collection$ = this.itemsCollection.valueChanges().pipe(
       map(data => data.map(presta => new Prestation(presta)))
       // Ou version plus détaillée :
       // map((data) => {
@@ -31,13 +31,13 @@ export class PrestationService {
   }
 
   // get collection
-  get collection(): Observable<Prestation[]> {
-    return this._collection;
+  get collection$(): Observable<Prestation[]> {
+    return this._collection$;
   }
 
   // set collection
-  set collection(col: Observable<Prestation[]>) {
-    this._collection = col;
+  set collection$(col: Observable<Prestation[]>) {
+    this._collection$ = col;
   }
 
   // update item collection

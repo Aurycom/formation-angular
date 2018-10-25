@@ -1,6 +1,6 @@
 <app-tableau [headers]="headers">
   <!-- passage de la variable presta à la propriete fille item -->
-  <app-prestation *ngFor="let presta of collection" [item]="presta"></app-prestation>
+  <app-prestation *ngFor="let presta of collection$ | async" [item]="presta"></app-prestation>
   <app-add-row title="prestation"></app-add-row>
 </app-tableau>
 
