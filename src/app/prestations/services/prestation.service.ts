@@ -33,6 +33,9 @@ export class PrestationService {
   // delete item collection
 
   // add item collection
+  public add(item: Prestation) {
+    this.collection.push(item);
+  }
 
   // get item collection
 }

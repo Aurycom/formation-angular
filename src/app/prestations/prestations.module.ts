@@ -10,15 +10,18 @@ import { PrestationsRoutingModule } from './routing/prestations-routing/prestati
 import { RouterModule } from '@angular/router';
 import { AddPrestationComponent } from './containers/add-prestation/add-prestation.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormPrestationComponent } from './components/form-prestation/form-prestation.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
     PrestationsRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
-  declarations: [PrestationsComponent, ListPrestationsComponent, PrestationComponent, AddPrestationComponent],
+  declarations: [PrestationsComponent, ListPrestationsComponent, PrestationComponent, AddPrestationComponent, FormPrestationComponent],
   exports: [PrestationsComponent]
 })
 export class PrestationsModule { }

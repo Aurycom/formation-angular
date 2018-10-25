@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
   public title = 'crm prestation';
   public faBars = faBars;
   public faUser = faUser;
+  public open = true;
   constructor() { }
 
   ngOnInit() {
