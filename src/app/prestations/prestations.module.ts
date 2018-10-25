@@ -9,12 +9,14 @@ import { PrestationsRoutingModule } from './routing/prestations-routing/prestati
 
 import { RouterModule } from '@angular/router';
 import { AddPrestationComponent } from './containers/add-prestation/add-prestation.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
-    PrestationsRoutingModule
+    PrestationsRoutingModule,
+    FontAwesomeModule
   ],
   declarations: [PrestationsComponent, ListPrestationsComponent, PrestationComponent, AddPrestationComponent],
   exports: [PrestationsComponent]

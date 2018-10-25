@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { State } from 'src/app/shared/enums/state.enum';
 import { Prestation } from 'src/app/shared/models/prestation.model';
 import { PrestationService } from '../../services/prestation.service';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-prestation',
@@ -10,6 +11,7 @@ import { PrestationService } from '../../services/prestation.service';
 })
 export class PrestationComponent implements OnInit {
   public states = Object.values(State);
+  public faTrashAlt = faTrashAlt;
   // Bind item du contenu parent avec @Input()
   @Input() public item: Prestation;
   constructor(

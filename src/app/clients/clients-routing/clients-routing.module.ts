@@ -6,7 +6,7 @@ import { AddClientComponent } from '../containers/add-client/add-client.componen
 
 
 const appRoutes: Routes = [
-  { path: '', component: ClientsComponent }
+  { path: '', component: ClientsComponent },
   { path: 'add', component: AddClientComponent }
 ];
 

@@ -20,7 +20,7 @@ export class ListPrestationsComponent implements OnInit {
 
   ngOnInit() {
     this.collection = this.ps.collection;
-    this.headers = ['Type', 'Client', 'Nb jours', 'TJM HT', 'Total HT', 'Total TTC', 'Action'];
+    this.headers = ['Type', 'Client', 'Nb jours', 'TJM HT', 'Total HT', 'Total TTC', 'Action', 'Delete'];
     this.btnAjoutTexte = 'Ajouter une prestation';
   }
 

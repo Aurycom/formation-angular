@@ -11,11 +11,13 @@ import { LoginModule } from '../login/login.module';
 import { SharedModule } from '../shared/shared.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { PageNotFoundModule } from '../page-not-found/page-not-found.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FontAwesomeModule
   ],
   declarations: [UiComponent, HeaderComponent, NavComponent, FooterComponent],
   exports: [UiComponent]

@@ -7,12 +7,14 @@ import { ClientsRoutingModule } from './clients-routing/clients-routing.module';
 import { ClientsComponent } from './containers/clients/clients.component';
 import { AddClientComponent } from './containers/add-client/add-client.component';
 import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
-    ClientsRoutingModule
+    ClientsRoutingModule,
+    FontAwesomeModule
   ],
   declarations: [ClientsComponent, ListClientsComponent, ClientComponent, AddClientComponent],
   exports: [ClientsComponent]

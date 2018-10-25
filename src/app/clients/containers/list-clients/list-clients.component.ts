@@ -22,7 +22,7 @@ export class ListClientsComponent implements OnInit {
     this.collection = this.ps.collection;
     console.log(this.collection);
 
-    this.headers = ['Id', 'Nom', 'Adresse', 'Code Postal', 'Ville', 'TJM HT', 'Etat'];
+    this.headers = ['Id', 'Nom', 'Adresse', 'Code Postal', 'Ville', 'TJM HT', 'Etat', 'Delete'];
     this.btnAjoutTexte = 'Ajouter un client';
   }
 
