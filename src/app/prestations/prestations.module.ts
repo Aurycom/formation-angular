@@ -11,7 +11,8 @@ import { RouterModule } from '@angular/router';
 import { AddPrestationComponent } from './containers/add-prestation/add-prestation.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormPrestationComponent } from './components/form-prestation/form-prestation.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 
 @NgModule({
   imports: [
@@ -19,9 +20,10 @@ import { FormsModule } from '@angular/forms';
     SharedModule,
     PrestationsRoutingModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  declarations: [PrestationsComponent, ListPrestationsComponent, PrestationComponent, AddPrestationComponent, FormPrestationComponent],
+  declarations: [PrestationsComponent, ListPrestationsComponent, PrestationComponent, AddPrestationComponent, FormPrestationComponent, ReactiveFormComponent],
   exports: [PrestationsComponent]
 })
 export class PrestationsModule { }

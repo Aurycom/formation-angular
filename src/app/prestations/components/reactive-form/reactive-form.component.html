@@ -1,0 +1,45 @@
+<div class="container">
+  <form novalidate (ngSubmit)="onSubmit()" [formGroup]="form">
+
+    <div class="form-group">
+      <label for="type">Type presta</label>
+      <input type="text" class="form-control" id="type" formControlName="typePresta">
+      <div class="alert alert-danger" *ngIf="isError('typePresta')">
+        champ invalide
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="client">Client</label>
+      <input type="text" class="form-control" id="client" formControlName="client" [ngClass]="{'is-invalid':isError('client')}">
+      <div class="alert alert-danger" *ngIf="isError('client')">
+        champ invalide
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="nbJours">Nb jours</label>
+      <input type="number" class="form-control" id="nbJours" formControlName="nbJours">
+    </div>
+
+    <div class="form-group">
+      <label for="tjmHt">Tjm HT</label>
+      <input type="number" class="form-control" id="tjmHt" formControlName="tjmHt">
+    </div>
+
+    <div class="form-group">
+      <label for="tauxTva">Tva</label>
+      <input type="number" class="form-control" id="tauxTva" formControlName="tauxTva">
+    </div>
+
+    <div class="form-group">
+      <label for="state">State</label>
+      <select id="state" class="form-control" formControlName="state">
+        <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+      </select>
+    </div>
+
+    <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Enregistrer</button>
+
+  </form>
+</div>
