@@ -1,16 +1,17 @@
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { LOCALE_ID, NgModule } from '@angular/core';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AppComponent } from './app.component';
-import { PrestationsModule } from './prestations/prestations.module';
-import { UiModule } from './ui/ui.module';
 import { Router } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { environment } from 'src/environments/environments.firebase';
 import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
-import { ClientsModule } from './clients/clients.module';
+import { UiModule } from './ui/ui.module';
 
 // the second parameter 'fr' is optional
 registerLocaleData(localeFr, 'fr');
@@ -26,7 +27,8 @@ registerLocaleData(localeFr, 'fr');
     AppRoutingModule,
     UiModule,
     PageNotFoundModule,
-
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [ { provide: LOCALE_ID, useValue: 'fr' } ],
   bootstrap: [AppComponent]
