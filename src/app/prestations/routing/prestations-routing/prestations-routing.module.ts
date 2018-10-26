@@ -6,6 +6,7 @@ import { AddPrestationComponent } from '../../containers/add-prestation/add-pres
 import { EditPrestationComponent } from '../../containers/edit-prestation/edit-prestation.component';
 import { DetailClientPrestaComponent } from '../../containers/detail-client-presta/detail-client-presta.component';
 import { DetailComponent } from '../../containers/detail/detail.component';
+import { PrestationResolverService } from '../../services/prestation-resolver.service';
 
 const appRoutes: Routes = [
   {
@@ -22,7 +23,10 @@ const appRoutes: Routes = [
   },
   {
     path: 'edit/:id',
-    component : EditPrestationComponent
+    component : EditPrestationComponent,
+    resolve: {
+      item: PrestationResolverService
+    }
   }
 ];
 

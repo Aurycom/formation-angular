@@ -22,7 +22,6 @@ export class PrestationsComponent implements OnInit {
         label: 'Détail client'
       }
     ];
-    console.log(this.routes);
   }
 
 }

@@ -24,13 +24,12 @@ registerLocaleData(localeFr, 'fr');
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
-    LoginModule,
-    AppRoutingModule,
-    UiModule,
-    PageNotFoundModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    HttpClientModule
+    LoginModule,
+    UiModule,
+    AppRoutingModule
   ],
   providers: [ { provide: LOCALE_ID, useValue: 'fr' } ],
   bootstrap: [AppComponent]
