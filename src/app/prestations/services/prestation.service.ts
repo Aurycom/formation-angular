@@ -3,8 +3,10 @@ import {Prestation} from 'src/app/shared/models/prestation.model';
 import { fakeCollectionPrestations } from './fake-collection';
 import { State } from 'src/app/shared/enums/state.enum';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { ClientsService } from 'src/app/clients/services/clients.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,21 +15,32 @@ export class PrestationService {
 
   private itemsCollection: AngularFirestoreCollection<Prestation>;
   private _collection$: Observable<Prestation[]>;
+  public presta$: BehaviorSubject<Prestation> = new BehaviorSubject<Prestation>(null);
 
   constructor(
-    private afs: AngularFirestore
+    private afs: AngularFirestore,
+    private http: HttpClient,
+    private cs: ClientsService
   ) {
     // this._collection = fakeCollectionPrestations;
     this.itemsCollection = afs.collection<Prestation>('prestations');
     this.collection$ = this.itemsCollection.valueChanges().pipe(
-      map(data => data.map(presta => new Prestation(presta)))
+      // Plus simple
+      // map(data => data.map(presta => new Prestation(presta)))
       // Ou version plus détaillée :
-      // map((data) => {
-      //   return data.map((presta) => {
-      //     return new Prestation(presta);
-      //   });
-      // })
+      map((data) => {
+        this.presta$.next(new Prestation(data[0]));
+        console.log(this.presta$.value);
+        return data.map((presta) => {
+          return new Prestation(presta);
+        });
+      })
     );
+    /* Exemple d'utilisation en utilisation du full rest */
+    // Retourne forcement un observable
+    // this.collection$ = this.http.get<Prestation[]>('url-api/prestations').pipe(
+    //   map(data => data.map(presta => new Prestation(presta)))
+    // );
   }
 
   // get collection
@@ -40,18 +53,40 @@ export class PrestationService {
     this._collection$ = col;
   }
 
-  // update item collection
-  public update(item: Prestation, state: State) {
-    item.state = state;
-    // console.log(item.state);
+  // add presta
+  public add(item: Prestation): Promise<any> {
+    const id = this.afs.createId();
+    const prestation = { id, ...item };
+    return this.itemsCollection.doc(id).set(prestation).catch((e) => {
+      console.log(e);
+    });
+    /* Exemple d'utilisation en utilisation du full rest */
+    // Retourne forcement un observable
+    // return this.http.post('urlapi/prestations', item);
   }
 
-  // delete item collection
 
-  // add item collection
-  public add(item: Prestation) {
-    // this.collection.push(new Prestation(item));
+  public update(item: Prestation, state?: State): Promise<any> {
+    // Décompose l'objet item de type prestation en objet avec clés/valeurs
+    const presta  = {...item};
+    if (state) {
+      presta.state = state;
+    }
+    return this.itemsCollection.doc(item.id).update(presta).catch((e) => {
+      console.log(e);
+    });
+    // return this.http.patch('urlapi/prestations/'+item.id, presta);
   }
 
-  // get item collection
+  public delete(item: Prestation): Promise<any> {
+    return this.itemsCollection.doc(item.id).delete().catch((e) => {
+      console.log(e);
+    });
+    // return this.http.delete(`urlapi/prestations/${item.id}`);
+  }
+
+  getPrestation(id: string): Observable<Prestation> {
+    return this.itemsCollection.doc<Prestation>(id).valueChanges();
+    // return this.http.get(`urlaspi/prestations/${id}`);
+  }
 }

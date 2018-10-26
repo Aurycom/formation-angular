@@ -10,6 +10,7 @@ import { TemplateAComponent } from './templates/template-a/template-a.component'
 import { TemplateBComponent } from './templates/template-b/template-b.component';
 import { TemplateCComponent } from './templates/template-c/template-c.component';
 import { TemplateDComponent } from './templates/template-d/template-d.component';
+import { NavTabsComponent } from './components/nav-tabs/nav-tabs.component';
 
 @NgModule({
   imports: [
@@ -17,9 +18,9 @@ import { TemplateDComponent } from './templates/template-d/template-d.component'
     RouterModule
   ],
   declarations: [TotalPipe, TableauComponent, StateDirective, AddRowComponent,
-    TableauLightComponent, TemplateAComponent, TemplateBComponent, TemplateCComponent, TemplateDComponent],
+    TableauLightComponent, TemplateAComponent, TemplateBComponent, TemplateCComponent, TemplateDComponent, NavTabsComponent],
   // tslint:disable-next-line:max-line-length
   exports: [TotalPipe, TableauComponent, StateDirective, AddRowComponent,
-    TableauLightComponent, TemplateAComponent, TemplateBComponent, TemplateCComponent, TemplateDComponent]
+    TableauLightComponent, TemplateAComponent, TemplateBComponent, TemplateCComponent, TemplateDComponent, NavTabsComponent]
 })
 export class SharedModule { }

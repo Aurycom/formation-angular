@@ -1,3 +1,9 @@
 <app-template-c title="Prestations">
   <app-list-prestations></app-list-prestations>
 </app-template-c>
+
+<!-- créer deux liens avec sous navigation pour mettre à jour le bas de la page-->
+<div class="container">
+  <app-nav-tabs [routes]="routes"></app-nav-tabs>
+  <router-outlet></router-outlet>
+</div>

@@ -1,18 +1,20 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PrestationsComponent } from './containers/prestations/prestations.component';
-import { ListPrestationsComponent } from './containers/list-prestations/list-prestations.component';
-import { TotalPipe } from '../shared/pipes/total.pipe';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SharedModule } from '../shared/shared.module';
+import { FormPrestationComponent } from './components/form-prestation/form-prestation.component';
 import { PrestationComponent } from './components/prestation/prestation.component';
+import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+import { AddPrestationComponent } from './containers/add-prestation/add-prestation.component';
+import { DetailClientPrestaComponent } from './containers/detail-client-presta/detail-client-presta.component';
+import { DetailComponent } from './containers/detail/detail.component';
+import { EditPrestationComponent } from './containers/edit-prestation/edit-prestation.component';
+import { ListPrestationsComponent } from './containers/list-prestations/list-prestations.component';
+import { PrestationsComponent } from './containers/prestations/prestations.component';
 import { PrestationsRoutingModule } from './routing/prestations-routing/prestations-routing.module';
 
-import { RouterModule } from '@angular/router';
-import { AddPrestationComponent } from './containers/add-prestation/add-prestation.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { FormPrestationComponent } from './components/form-prestation/form-prestation.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 
 @NgModule({
   imports: [
@@ -21,10 +23,11 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
     PrestationsRoutingModule,
     FontAwesomeModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   // tslint:disable-next-line:max-line-length
-  declarations: [PrestationsComponent, ListPrestationsComponent, PrestationComponent, AddPrestationComponent, FormPrestationComponent, ReactiveFormComponent],
+  declarations: [PrestationsComponent, ListPrestationsComponent, PrestationComponent, AddPrestationComponent, FormPrestationComponent, ReactiveFormComponent, EditPrestationComponent, DetailClientPrestaComponent, DetailComponent],
   exports: [PrestationsComponent]
 })
 export class PrestationsModule { }

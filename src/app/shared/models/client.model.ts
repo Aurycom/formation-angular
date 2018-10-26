@@ -2,7 +2,7 @@ import { ClientI } from '../interfaces/client-i';
 import { ClientState } from '../enums/client-state.enum';
 
 export class Client implements ClientI {
-  id: number;
+  id: string;
   nom: string;
   adresse: string;
   codePostal: number;

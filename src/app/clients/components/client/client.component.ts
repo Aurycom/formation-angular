@@ -15,7 +15,7 @@ export class ClientComponent implements OnInit {
   public faTrashAlt = faTrashAlt;
 
   @Input() public item: Client;
-  constructor(private ps: ClientsService) {
+  constructor(private cs: ClientsService) {
 
   }
 
@@ -23,9 +23,16 @@ export class ClientComponent implements OnInit {
   }
 
   public changeState(event): void {
-    // console.log(event.target.value);
+    console.log(event.target.value);
     const state = event.target.value;
-    this.ps.update(this.item, state);
+    this.cs.update(this.item, state).then((data) => {
+      this.item.state = state;
+    });
+
+    // this.ps.update(this.item, state).subscribe((data) => {
+    // if data ... traiter les retours du serveur
+    //   this.item.state = state;
+    // });
   }
 
 }

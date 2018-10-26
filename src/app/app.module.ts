@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { UiModule } from './ui/ui.module';
+import { HttpClientModule } from '@angular/common/http';
 
 // the second parameter 'fr' is optional
 registerLocaleData(localeFr, 'fr');
@@ -28,7 +29,8 @@ registerLocaleData(localeFr, 'fr');
     UiModule,
     PageNotFoundModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    HttpClientModule
   ],
   providers: [ { provide: LOCALE_ID, useValue: 'fr' } ],
   bootstrap: [AppComponent]

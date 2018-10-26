@@ -1,4 +1,4 @@
 export interface ClientI {
-  id: number;
+  id: string;
   nom: string;
 }

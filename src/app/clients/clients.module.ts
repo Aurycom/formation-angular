@@ -9,7 +9,7 @@ import { AddClientComponent } from './containers/add-client/add-client.component
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormClientComponent } from './components/form-client/form-client.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     ClientsRoutingModule,
     FontAwesomeModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   declarations: [ClientsComponent, ListClientsComponent, ClientComponent, AddClientComponent, FormClientComponent],

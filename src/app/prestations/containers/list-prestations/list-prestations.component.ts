@@ -27,7 +27,7 @@ export class ListPrestationsComponent implements OnInit, OnDestroy {
     // this.sub = this.ps.collection.subscribe((data) => {
     //   this.collection = data;
     // });
-    this.headers = ['Type', 'Client', 'Nb jours', 'TJM HT', 'Total HT', 'Total TTC', 'Action', 'Delete'];
+    this.headers = ['Type', 'Client', 'Nb jours', 'TJM HT', 'Total HT', 'Total TTC', 'Action', 'Modifier', 'Supprimer'];
     this.btnAjoutTexte = 'Ajouter une prestation';
   }
 
